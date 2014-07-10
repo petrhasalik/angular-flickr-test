@@ -1,0 +1,22 @@
+<div class="detail">
+  <div class="row">
+    <div class="col-sm-11"><h1><a ng-href="{{photo.link}}">{{photo.title}}</a></h1></div>
+    <div class="col-sm-1"><a class="btn btn-default" href="#feed">Back</a></div>
+  </div>
+  <div class="row info">
+    <div class="col-sm-12">
+      <a ng-href="https://www.flickr.com/people/{{photo.author_id}}/">Photo author</a> | 
+      <span published-date="photo.published"></span>  
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3"><img width="100%" ng-src="{{photo.media.m}}" /></div>
+    <div class="col-sm-9">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus est, congue ut nisl non, pulvinar cursus lectus. Integer tellus nulla, ultricies at scelerisque vitae, placerat ut odio. Phasellus porttitor facilisis mi, nec porta odio feugiat luctus. Donec nec nibh nec ante viverra laoreet eget in dolor. Ut luctus lobortis leo ac sagittis. Mauris erat massa, pharetra non ligula sit amet, tempus tincidunt ligula. Suspendisse viverra tempus odio, quis vehicula felis eleifend at. Ut luctus sem malesuada cursus vestibulum. Cras quis rhoncus nisi. Curabitur mollis dolor quis lectus mollis, ac euismod massa vehicula. Pellentesque rutrum dui semper ipsum porta, at venenatis ligula sollicitudin. In non leo eu lacus rutrum laoreet. Sed eu egestas sapien, sed pulvinar libero. Suspendisse potenti.</p>
+      Tags: <tag-links tags="photo.tags"></tag-links>
+    </div>
+  </div>
+</div>
+
+

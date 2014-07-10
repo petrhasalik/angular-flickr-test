@@ -1,0 +1,20 @@
+{
+  "name": "angular-devstack",
+  "version": "0.0.0",
+  "authors": [
+    "Petr Hasalík <petr.hasalik@direct-services.cz>"
+  ],
+  "description": "angularjs gulp devstack",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "~1.2.19",
+    "angular-sanitize": "~1.2.19",
+    "bootstrap": "~3.2.0",
+    "angular-truncate": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.x"
+  }
+}
