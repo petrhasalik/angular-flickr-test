@@ -19,8 +19,21 @@
           scope.data = {};
 
           var truncateBySize = function(args) {
-            var limit = Math.floor(args.width / 40);
-            scope.truncatedText = characterFilter(scope.text, limit, true);
+            if(args.width < 480) {
+                var limit = Math.floor(args.width / 35);
+                scope.truncatedText = characterFilter(scope.text, limit, true);
+            }
+
+            if(args.width >= 480 && args.width < 768){
+                var limit = Math.floor(args.width / 30);
+                scope.truncatedText = characterFilter(scope.text, limit, true);
+            }
+
+            if(args.width >= 768){
+                var limit = Math.floor(args.width / 20);
+                scope.truncatedText = characterFilter(scope.text, limit, true);
+            }
+
           };
 
           scope.$on('window::resize', function(event, size) {

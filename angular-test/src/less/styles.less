@@ -1,21 +1,25 @@
 
 @import "bootstrap.less";
 
+/*List*/
+.list-item {
+  border-bottom: 1px solid #ebebeb;
+}
+
 h2 {
   height: 33px;
   overflow: hidden;
-}
+  margin-bottom: 3px;
 
-.page {
-  margin: 10px;
-  .container-fluid;
+  @media (min-width: @screen-sm-min) {
+    margin-bottom: 15px;
+  }
 }
 
 .image-box {
-  width: 150px;
   height: 100px;
   overflow: hidden;
-  margin: 10px;
+  margin: 10px 0;
   position: relative;
 
   img {
@@ -30,8 +34,47 @@ h2 {
   }
 }
 
+.date {
+  margin-bottom: 3px;
+  @media (min-width: @screen-sm-min) {
+    position: absolute;
+    top:1px;
+    left: 115px;
+  }
+}
+
+.flickr-link {
+  margin-left: 20px;
+  @media (min-width: @screen-sm-min) {
+    margin-left: 240px;
+  }
+}
+
+/*Detail*/
+
+.btn-back {
+  margin-top: 20px;
+  @media (min-width: @screen-sm-min) {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+  }
+}
+
+.detail h1 {
+  min-height: 36px;
+}
+
 .detail .info {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.detail body p {
+  padding-top: 20px;
+}
+
+.g-plus-wrapper {
+  margin-top: 20px;
 }
 

@@ -1,21 +1,32 @@
-<h1>Flickr Public Feed</h1>
-<div class="list" window-resize>
-  <div class="row" ng-repeat="photo in collection track by $index">
-    <div class="image-box col-md-2 col-sm-2">
-      <a ng-href="#feed/{{$index}}">
-        <img ng-src="{{photo.media.m}}" />
-      </a>
-    </div>
-    <div class="row col-md-9 col-sm-9 col-xs-12">
-      <h2 class="col-md-12 col-sm-12 col-xs-12">
-        <a ng-href="#feed/{{$index}}">
-          <dynamic-truncate text="photo.title"></dynamic-truncate>
-        </a>
-      </h2>
-      <div class="clearfix"></div>
-      <span class="col-md-4 col-md-push-2 col-sm-12 col-xs-12 " published-date="photo.published"></span>
-      <a class="col-md-2 col-md-pull-4 col-sm-3 col-xs-4" ng-href="https://www.flickr.com/people/{{photo.author_id}}/">Photo author</a>
-      <a class="col-md-2 col-sm-6 col-xs-6" ng-href="{{photo.link}}">View on Flickr</a>
-    </div>
+<section class="container-fluid list" window-resize >
+  <h1>Flickr Public Feed</h1>
+
+  <div class="infinite-container" lr-infinite-scroll="loadMore" scroll-threshold="800">
+      <div class="row list-item" ng-repeat="photo in collection track by $index">
+
+        <div class="image-box col-xs-3 col-sm-2 col-lg-1">
+          <a ng-href="#feed/{{$index}}">
+            <img ng-src="{{photo.media.m}}" />
+          </a>
+        </div>
+
+        <div class="col-xs-9 col-sm-10 col-lg-11">
+          <h2>
+            <a ng-href="#feed/{{$index}}">
+              <dynamic-truncate text="photo.title"></dynamic-truncate>
+            </a>
+          </h2>
+
+          <div class="row">
+              <div class="col-sm-12">
+                  <span class="date" published-date="photo.published"></span>
+              </div>
+              <div class="col-sm-12">
+                  <a class="author" ng-href="https://www.flickr.com/people/{{photo.author_id}}/">Photo author</a>
+                  <a class="flickr-link" ng-href="{{photo.link}}">View on Flickr</a>
+              </div>
+          </div>
+        </div>
+      </div>
   </div>
-</div>
+</section>

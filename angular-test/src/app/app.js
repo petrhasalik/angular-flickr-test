@@ -5,6 +5,8 @@
     'ngRoute',
     'ngSanitize',
     'truncate',
+    'djds4rce.angular-socialshare',
+    'lrInfiniteScroll',
     'common.directives.publishedDate',
     'common.directives.windowResize',
     'flickerDemo.feed'

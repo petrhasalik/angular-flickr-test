@@ -1,0 +1,7 @@
+/bower_components/
+/node_modules/
+/src/templates.js
+/src/app.js
+/nbproject/private/
+/build/
+/src/css/

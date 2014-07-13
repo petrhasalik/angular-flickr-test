@@ -12,7 +12,9 @@
     "angular-route": "~1.2.19",
     "angular-sanitize": "~1.2.19",
     "bootstrap": "~3.2.0",
-    "angular-truncate": "*"
+    "angular-truncate": "*",
+    "angular-socialshare": "*",
+    "lrInfiniteScroll": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.x"

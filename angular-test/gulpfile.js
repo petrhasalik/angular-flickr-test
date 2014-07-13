@@ -142,8 +142,11 @@ gulp.task('build-styles', function() {
 gulp.task('build', function() {
   runSequence(
     'build-clean',
-    ['templates', 'less'],
-    ['build-index', 'build-scripts', 'build-styles']
+    'templates',
+    'less',
+    'build-index',
+    'build-scripts',
+    'build-styles'
     );
 });
 
