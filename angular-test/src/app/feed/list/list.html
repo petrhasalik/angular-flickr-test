@@ -1,8 +1,7 @@
 <section class="container-fluid list" window-resize >
-  <h1>Flickr Public Feed</h1>
+    <h1>Flickr Public Feed</h1>
 
-  <div class="infinite-container" lr-infinite-scroll="loadMore" scroll-threshold="800">
-      <div class="row list-item" ng-repeat="photo in collection track by $index">
+    <div class="row list-item" ng-repeat="photo in collection track by $index">
 
         <div class="image-box col-xs-3 col-sm-2 col-lg-1">
           <a ng-href="#feed/{{$index}}">
@@ -27,6 +26,8 @@
               </div>
           </div>
         </div>
-      </div>
-  </div>
+    </div>
+
+    <button class="btn btn-primary btn-more" ng-click="loadMore()">Load more</button>
+
 </section>

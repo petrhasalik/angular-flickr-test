@@ -2735,6 +2735,9 @@ h2 {
     margin-left: 240px;
   }
 }
+.btn-more {
+  margin: 20px 0;
+}
 /*Detail*/
 .btn-back {
   margin-top: 20px;

@@ -23,7 +23,7 @@
   /**
    * Feed collection
    */
-  module.service('publicFeedCollection', function($q, publicFeedResource) {
+  module.service('publicFeedCollection', function($q,$location, publicFeedResource) {
     this.data = [];
     this.tags = null;
     /**
@@ -39,6 +39,15 @@
       this.tags = tags;
       return this.loadPhotos_();
     };
+
+    /**
+    * Fresh data
+    * @param {string} coma separed tags
+    * @returns {promise}
+    */
+    this.loadMoreByTags = function(tags) {
+        return publicFeedResource.load(tags);
+    }
     /**
      * @private
      * @returns {promise}
@@ -60,7 +69,11 @@
      */
     this.getPhoto = function(id) {
       if (this.data.length > 0) {
-        return this.data[id];
+          return this.data[id];
+      }
+
+      if(id > 20) {
+          id=1; //reset to begin if detail of more loaded picture is refreshed
       }
 
       return this.loadPhotos_().then(function(data) {
