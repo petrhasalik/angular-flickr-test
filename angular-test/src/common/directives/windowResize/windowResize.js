@@ -14,7 +14,7 @@
         scope.getSize = function() {
           return {
             width: element[0].offsetWidth,
-            height: element[0].offsetHeight,
+            height: element[0].offsetHeight
           };
         };
 

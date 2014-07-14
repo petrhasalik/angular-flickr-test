@@ -2687,27 +2687,26 @@ input[type="button"].btn-block {
     display: none !important;
   }
 }
-/*List*/
-.list-item {
-  border-bottom: 1px solid #ebebeb;
-}
-h2 {
+.list h2 {
   height: 33px;
   overflow: hidden;
   margin-bottom: 3px;
 }
 @media (min-width: 768px) {
-  h2 {
+  .list h2 {
     margin-bottom: 15px;
   }
 }
-.image-box {
+.list .list-item {
+  border-bottom: 1px solid #ebebeb;
+}
+.list .image-box {
   height: 100px;
   overflow: hidden;
   margin: 10px 0;
   position: relative;
 }
-.image-box img {
+.list .image-box img {
   position: absolute;
   left: -100%;
   right: -100%;
@@ -2717,47 +2716,46 @@ h2 {
   min-height: 100%;
   min-width: 100%;
 }
-.date {
+.list .date {
   margin-bottom: 3px;
 }
 @media (min-width: 768px) {
-  .date {
+  .list .date {
     position: absolute;
     top: 1px;
     left: 115px;
   }
 }
-.flickr-link {
+.list .flickr-link {
   margin-left: 20px;
 }
 @media (min-width: 768px) {
-  .flickr-link {
+  .list .flickr-link {
     margin-left: 240px;
   }
 }
-.btn-more {
+.list .btn-more {
   margin: 20px 0;
-}
-/*Detail*/
-.btn-back {
-  margin-top: 20px;
-}
-@media (min-width: 768px) {
-  .btn-back {
-    position: absolute;
-    top: 5px;
-    right: 20px;
-  }
 }
 .detail h1 {
   min-height: 36px;
+}
+.detail p {
+  padding-top: 20px;
 }
 .detail .info {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-.detail body p {
-  padding-top: 20px;
+.detail .btn-back {
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .detail .btn-back {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+  }
 }
 .g-plus-wrapper {
   margin-top: 20px;

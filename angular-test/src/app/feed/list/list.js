@@ -2,26 +2,23 @@
   'use strict';
 
   var module = angular.module('flickerDemo.feed.list', [
-      'common.directives.dynamicTruncate'
+    'common.directives.dynamicTruncate'
   ]);
 
-  module.controller('Feed.List', function($scope,$route, photoCollection, publicFeedCollection) {
+  module.controller('Feed.List', function($scope, $routeParams, photoCollection, publicFeedCollection) {
 
     $scope.search = {};
     $scope.collection = photoCollection;
 
     $scope.loadMore = function() {
-        var tags = '';
+      var tags = '';
+      if ($routeParams.hasOwnProperty('tags')) {
+        tags = $routeParams.tags;
+      }
 
-        if ($route.current.params.hasOwnProperty('tags')) {
-            tags = $route.current.params.tags;
-        }
-
-        return publicFeedCollection.loadMoreByTags(tags).then(function(response){
-            angular.forEach(response.data.items, function(value, key){
-                $scope.collection.push(value);
-            });
-        });
+      return publicFeedCollection.loadMoreByTags(tags).then(function(response) {
+        Array.prototype.push.apply($scope.collection, response.data.items);
+      });
     };
 
   });

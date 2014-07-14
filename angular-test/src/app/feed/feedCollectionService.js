@@ -23,7 +23,7 @@
   /**
    * Feed collection
    */
-  module.service('publicFeedCollection', function($q,$location, publicFeedResource) {
+  module.service('publicFeedCollection', function($q, $location, publicFeedResource) {
     this.data = [];
     this.tags = null;
     /**
@@ -41,13 +41,14 @@
     };
 
     /**
-    * Fresh data
-    * @param {string} coma separed tags
-    * @returns {promise}
-    */
+     * Fresh data
+     * @param {string} coma separed tags
+     * @returns {promise}
+     */
     this.loadMoreByTags = function(tags) {
-        return publicFeedResource.load(tags);
-    }
+      return publicFeedResource.load(tags);
+    };
+    
     /**
      * @private
      * @returns {promise}
@@ -55,6 +56,7 @@
     this.loadPhotos_ = function() {
       return publicFeedResource.load(this.tags).then(this.processResponse_.bind(this));
     };
+    
     /**
      * @private
      * @returns {Array}
@@ -63,17 +65,18 @@
       this.data = response.data.items;
       return this.data;
     };
+    
     /**
      * @param {number} id
      * @returns {Object|promise}
      */
     this.getPhoto = function(id) {
       if (this.data.length > 0) {
-          return this.data[id];
+        return this.data[id];
       }
 
-      if(id > 20) {
-          id=1; //reset to begin if detail of more loaded picture is refreshed
+      if (id > 20) {
+        id = 1; //reset to begin if detail of more loaded picture is refreshed
       }
 
       return this.loadPhotos_().then(function(data) {
